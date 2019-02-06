@@ -28,6 +28,8 @@ class ViewController: UIViewController {
             print("закінчується на ий")
         }
     }
-    
+    func newFunc() {
+        
+    }
 }
 
