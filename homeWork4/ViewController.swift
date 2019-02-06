@@ -13,8 +13,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        countOfCharacter()
+        catchPrefix()
     }
-
-
+    
+    func countOfCharacter() {
+        let name = "Petro"
+        print(name.count)
+    }
+    
+    func catchPrefix() {
+        let lastName = "Голішевський"
+        if lastName.hasSuffix("ий") {
+            print("закінчується на ий")
+        }
+    }
+    
 }
 
