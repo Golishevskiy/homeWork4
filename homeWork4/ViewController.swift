@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         }
     }
     func newFunc() {
-        
+        print()
     }
 }
 
