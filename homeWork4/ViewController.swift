@@ -9,27 +9,43 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        countOfCharacter()
-        catchPrefix()
+        //        countOfCharacter()
+        //        catchSuffix()
+        //        checkFullName()
+        print(reversString(text: "Hello"))
     }
     
     func countOfCharacter() {
         let name = "Petro"
-        print(name.count)
+        print("Count characters in name = \(name.count)")
     }
     
-    func catchPrefix() {
+    func catchSuffix() {
         let lastName = "Голішевський"
         if lastName.hasSuffix("ий") {
-            print("закінчується на ий")
+            print("lastName \(lastName) has \"ий\"")
         }
     }
-    func newFunc() {
-        print()
+    
+    //    func checkFullName() {
+    //        var firstName = ""
+    //        var lostname = ""
+    //        var fullName = "GolishevskiyPetro"
+    //
+    //
+    //        print(fullName.uppercased())
+    //    }
+    
+    func reversString(text: String) -> String {
+        var reversText = ""
+        for i in text {
+            reversText.insert(i, at: reversText.startIndex)
+        }
+        return reversText
     }
 }
 
