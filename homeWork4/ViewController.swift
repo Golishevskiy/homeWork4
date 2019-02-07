@@ -12,11 +12,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //        countOfCharacter()
-        //        catchSuffix()
-        //        checkFullName()
-        print(reversString(text: "Hello"))
+//        countOfCharacter()
+//        catchSuffix()
+//        checkFullName()
+//        print(reversString(text: "Hello"))
+        
+        print(commaInNumber(number: 2949477789))
     }
     
     func countOfCharacter() {
@@ -47,5 +48,44 @@ class ViewController: UIViewController {
         }
         return reversText
     }
+    // comma in number each 3 symbol
+    func commaInNumber(number: Int) -> String {
+        let numberInString = String(number)
+        var charArray = [Character]()
+        var iteration = 0
+        for i in numberInString {
+            iteration += 1
+            charArray.insert(i, at: charArray.startIndex)
+            if iteration%3 == 0 && iteration != 0 {
+                charArray.insert(",", at: charArray.startIndex)
+            }
+        }
+        let noComma = checkFirstCharComma(array: charArray)
+        let stringDone = charToString(array: noComma)
+        return stringDone
+    }
+    // if first char is comma - remove comma and return array
+    func checkFirstCharComma(array: [Character]) -> [Character] {
+        var checkArray = array
+        if checkArray[0] == "," {
+            checkArray.remove(at: 0)
+        }
+        return checkArray
+    }
+    // conver [char] to String
+    func charToString(array: [Character]) -> String {
+        var inString = ""
+        for i in array {
+            inString.append(contentsOf: String(i))
+        }
+        return inString
+    }
+    
+//    func commaInNumber(number: Int) -> String {
+//        var numberString = String(number)
+//
+//        return " "
+//    }
+    
 }
 
