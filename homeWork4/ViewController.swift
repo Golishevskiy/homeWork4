@@ -12,13 +12,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        countOfCharacter()
-        catchSuffix()
-        checkFullName()
-        print(reversString(text: "Hello"))
-        print(commaInNumber(number: 2949477789))
-        print(sortArray(array: [10,7,11,11, 1,2,3,4,5]))
-        print(translite(str: "abcfD"))
+//        countOfCharacter()
+//        catchSuffix()
+//        print(reversString(text: "Hello"))
+//        print(commaInNumber(number: 2949477789))
+//        print(sortArray(array: [10,7,11,11, 1,2,3,4,5]))
+//        print(translite(str: "abcfD"))
+        
+        let array = ["lada", "sedan", "baklazhan", "chemodan"]
+        checkWords(words: array, searchWords: "da")
     }
     
     //homework 1
@@ -108,24 +110,16 @@ class ViewController: UIViewController {
         return transliteString
     }
     
-    //homework 10
-    func antimat(str: String) -> String {
-        
+    //homework 9 used NSPredicate
+    func checkWords(words: [String], searchWords: String) {
+        var filteredWords = [String].init()
+        let containPredicate = NSPredicate(format: "SELF CONTAINS %@", searchWords)
+        filteredWords = words.filter({ name in
+            containPredicate.evaluate(with: name)
+        })
+        print("\(filteredWords)")
     }
     
     
-    //put a space between the firstname and secondname
-    func checkFullName() {
-//        var firstName = ""
-//        var lostname = ""
-        let fullName = "GolishevskiyPetro"
-        for i in fullName {
-            var stringSymbol = String(i)
-            if stringSymbol.uppercased() == stringSymbol {
-                print(stringSymbol)
-            }
-        }
-        print(fullName)
-    }
 }
 
